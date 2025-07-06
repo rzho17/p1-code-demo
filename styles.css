@@ -2,6 +2,8 @@ body {
   font-family: "Roboto", sans-serif;
   padding: 1rem;
   line-height: 1.5;
+
+  min-height: 100vh;
 }
 
 h1 {
@@ -105,13 +107,76 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    gap: 2rem;
   }
 
   section {
+    width: 100%;
+    max-width: 75rem;
     display: grid;
     grid-template-areas:
       "title card card card"
       "title card card card"
-      "graph1 graph1 graph2 graph2";
+      "graph graph graph graph";
+
+    grid-auto-rows: 1fr;
+
+    gap: 1rem;
+  }
+
+  .title-container {
+    grid-area: title;
+
+    justify-content: space-between;
+    height: 86%;
+    align-self: stretch;
+  }
+
+  .title-container h2 {
+    font-size: 2.5rem;
+  }
+
+  .title-container p {
+    line-height: 2;
+  }
+
+  .card-container {
+    display: flex;
+    gap: 1rem;
+    grid-area: card;
+  }
+
+  .graph-container {
+    display: flex;
+    justify-content: space-between;
+    grid-area: graph;
+
+    gap: 1rem;
+  }
+
+  .graph {
+    margin: 0;
+
+    flex-direction: row;
+    border: none;
+    border-radius: 0;
+
+    border-left: 1rem solid violet;
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  .graph-img {
+    width: 25rem;
+    height: 100%;
+
+    margin: 0 1rem;
+  }
+
+  .graph-text {
+    flex-shrink: 5;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
   }
 }
