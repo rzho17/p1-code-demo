@@ -15,7 +15,6 @@
 }
 
 /* dark mode */
-
 body[data-theme="dark"] {
   --background-color: #1e202f;
   --heading-color: #edf2f4;
@@ -45,7 +44,8 @@ h6 {
 }
 
 p,
-label {
+label,
+.hex-value {
   color: var(--text-color);
 }
 
