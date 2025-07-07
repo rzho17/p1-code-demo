@@ -57,8 +57,6 @@ function setColorText() {
 }
 
 function setColor(element, color) {
-  console.log("i work");
-  console.log(element);
   document.documentElement.style.setProperty(element, color);
   setColorAndText();
 }
