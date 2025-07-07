@@ -26,6 +26,14 @@ const itemArray = [
   secondary.value,
 ];
 
+// sets initial colors
+setColorAndText();
+
+function setColorAndText() {
+  setColorPicker();
+  setColorText();
+}
+
 function setColorPicker() {
   background.value = getInitialColor("--background-color");
   heading.value = getInitialColor("--heading-color");
@@ -50,14 +58,7 @@ function setColorText() {
 
 function setColor(element, color) {
   document.documentElement.style.setProperty(element, color);
-}
-
-// sets initial colors
-setColorAndText();
-
-function setColorAndText() {
-  setColorPicker();
-  setColorText();
+  setColorAndText();
 }
 
 background.addEventListener("input", (e) => {
@@ -98,12 +99,26 @@ const darkBtn = document.querySelector(".dark");
 
 lightBtn.addEventListener("click", () => {
   document.body.removeAttribute("data-theme");
-  setColorPicker();
+
+  setColor("--background-color", "#edf2f4");
+  setColor("--heading-color", "#1e202f");
+  setColor("--text-color", "#2b2d42");
+  setColor("--card-color", "#e4e4e4");
+  setColor("--primary-color", "#ef233c");
+  setColor("--secondary-color", "#006925");
+  setColorAndText();
 });
 
 darkBtn.addEventListener("click", () => {
   document.body.setAttribute("data-theme", "dark");
-  setColorPicker();
+
+  setColor("--background-color", "#1e202f");
+  setColor("--heading-color", "#edf2f4");
+  setColor("--text-color", "#edf2f4");
+  setColor("--card-color", "#515151");
+  setColor("--primary-color", "#eb4255");
+  setColor("--secondary-color", "#00d049");
+  setColorAndText();
 });
 
 // random mode
@@ -117,13 +132,6 @@ randomBtn.addEventListener("click", () => {
   itemArray[3] = randomHex();
   itemArray[4] = randomHex();
   itemArray[5] = randomHex();
-
-  // setColor("--background-color", itemArray[0]);
-  // setColor("--heading-color", itemArray[1]);
-  // setColor("--text-color", itemArray[2]);
-  // setColor("--card-color", itemArray[3]);
-  // setColor("--primary-color", itemArray[4]);
-  // setColor("--secondary-color", itemArray[5]);
 
   document.body.removeAttribute("data-theme");
 
