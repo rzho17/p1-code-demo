@@ -8,6 +8,34 @@ body {
 
 h1 {
   font-size: 2.5rem;
+  width: 100%;
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+/* color picker */
+
+.button-modes:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.color-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  text-wrap: wrap;
+  width: 5rem;
+}
+
+.color-picker input {
+  cursor: pointer;
+  width: 100%;
 }
 
 /* main section */
@@ -59,10 +87,12 @@ button {
   margin: 2rem 0;
 
   max-width: 18.75rem;
+
+  border-radius: 10px 10px;
 }
 
 .card div {
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 8px 8px 0 0;
   width: 100%;
   height: 15.625rem;
   background-color: beige;
@@ -73,13 +103,13 @@ button {
 }
 
 .card button {
-  margin: 0 1rem;
+  margin: 0 1rem 1rem;
 }
 
 /* graph container */
 
 .graph {
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 10px 10px;
   border-top: 1rem solid bisque;
 
   display: flex;
@@ -92,12 +122,13 @@ button {
 .graph-img {
   width: 100%;
   height: 12.5rem;
-  margin-top: 1rem;
+
   background-color: burlywood;
 }
 
 .graph-text {
   display: flex;
+  padding: 1rem;
 }
 
 /* media query */
@@ -125,11 +156,12 @@ button {
     gap: 1rem;
   }
 
+  /* title styles */
   .title-container {
     grid-area: title;
 
     justify-content: space-between;
-    height: 86%;
+    height: 84%;
     align-self: stretch;
   }
 
@@ -139,6 +171,12 @@ button {
 
   .title-container p {
     line-height: 2;
+  }
+
+  .title-container button {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
   .card-container {
@@ -163,7 +201,7 @@ button {
     border-radius: 0;
 
     border-left: 1rem solid violet;
-    border-radius: 1rem 0 0 1rem;
+    border-radius: 10px;
   }
 
   .graph-img {
@@ -171,6 +209,7 @@ button {
     height: 100%;
 
     margin: 0 1rem;
+    margin-left: 0;
   }
 
   .graph-text {

@@ -1,0 +1,111 @@
+/* declare the root value */
+:root {
+  --background-color: #edf2f4;
+  --heading-color: #1e202f;
+  --text-color: #2b2d42;
+  --card-color: #e4e4e4;
+  --primary-color: #ef233c;
+  --secondary-color: #006925;
+  --white-color: #ffffff;
+
+  --graph-img-color: rgb(169, 169, 169);
+  --secondary-hover: #44af69;
+
+  --box-shadow: #0000003d 0px 3px 8px;
+}
+
+/* dark mode */
+
+body[data-theme="dark"] {
+  --background-color: #1e202f;
+  --heading-color: #edf2f4;
+  --text-color: #edf2f4;
+  --card-color: #515151;
+  --primary-color: #eb4255;
+  --secondary-color: #00d049;
+  --white-color: #ffffff;
+
+  --graph-img-color: rgb(112, 111, 111);
+  --secondary-hover: #44af69;
+}
+
+/* body background */
+body {
+  background-color: var(--background-color);
+}
+
+/* heading and text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
+
+p,
+label {
+  color: var(--text-color);
+}
+
+/* color changer buttons */
+
+/* title container styles */
+.main-cta,
+.secondary-cta,
+.button-modes {
+  box-shadow: var(--box-shadow);
+}
+
+.main-cta,
+.button-modes {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+.secondary-cta {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* card styles */
+.card,
+.graph {
+  box-shadow: var(--box-shadow);
+}
+
+.card {
+  background-color: var(--card-color);
+}
+
+.card div {
+  background-color: var(--primary-color);
+}
+
+/* graph styles */
+.graph {
+  background-color: var(--card-color);
+  border-color: var(--primary-color);
+}
+
+.graph-img {
+  background-color: var(--graph-img-color);
+}
+
+.graph-text button {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* hover styles */
+
+.main-cta:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.secondary-cta:hover {
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+}
