@@ -38,6 +38,28 @@ h1 {
   width: 100%;
 }
 
+/* links */
+
+a {
+  padding: 1rem 0.5rem;
+}
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 1px dotted;
+}
+
 /* main section */
 
 section {
@@ -165,7 +187,7 @@ button {
     grid-area: title;
 
     justify-content: space-between;
-    height: 84%;
+    height: 90%;
     align-self: stretch;
   }
 

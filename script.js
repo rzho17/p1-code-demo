@@ -1,3 +1,4 @@
+// color swatches
 const background = document.querySelector("#background");
 const heading = document.querySelector("#heading");
 const text = document.querySelector("#text");
@@ -9,7 +10,9 @@ const root = document.querySelector(":root");
 
 const hexContainers = document.querySelectorAll(".hex-value");
 
+// gets a color from a selected element
 function getInitialColor(ele) {
+  // gets the variable style color from the element
   const color = getComputedStyle(document.documentElement).getPropertyValue(
     ele
   );
@@ -17,6 +20,7 @@ function getInitialColor(ele) {
   return color;
 }
 
+// gets the color values of the items and stores them in an array
 const itemArray = [
   background.value,
   heading.value,
@@ -26,15 +30,9 @@ const itemArray = [
   secondary.value,
 ];
 
-// sets initial colors
-setColorAndText();
-
-function setColorAndText() {
-  setColorPicker();
-  setColorText();
-}
-
+// set the color of the swatches and gets the hex container text
 function setColorPicker() {
+  // sets colors of swatches
   background.value = getInitialColor("--background-color");
   heading.value = getInitialColor("--heading-color");
   text.value = getInitialColor("--text-color");
@@ -42,6 +40,7 @@ function setColorPicker() {
   primary.value = getInitialColor("--primary-color");
   secondary.value = getInitialColor("--secondary-color");
 
+  // sets hex container hex codes
   itemArray[0] = getInitialColor("--background-color");
   itemArray[1] = getInitialColor("--heading-color");
   itemArray[2] = getInitialColor("--text-color");
@@ -50,6 +49,7 @@ function setColorPicker() {
   itemArray[5] = getInitialColor("--secondary-color");
 }
 
+// sets the hex code color for each swatch
 function setColorText() {
   hexContainers.forEach((container, index) => {
     container.textContent = itemArray[index];
@@ -58,9 +58,20 @@ function setColorText() {
 
 function setColor(element, color) {
   document.documentElement.style.setProperty(element, color);
+  // each time the color changes, it will change the swatch palette
   setColorAndText();
 }
 
+// sets initial colors
+setColorAndText();
+
+function setColorAndText() {
+  setColorPicker();
+  setColorText();
+}
+
+// event listener on each swatch to listen
+// to change on input and get the color value
 background.addEventListener("input", (e) => {
   const color = e.target.value;
   setColor("--background-color", color);
@@ -93,46 +104,37 @@ secondary.addEventListener("input", (e) => {
 });
 
 // light and dark mode
-
 const lightBtn = document.querySelector(".light");
 const darkBtn = document.querySelector(".dark");
 
 lightBtn.addEventListener("click", () => {
-  document.body.removeAttribute("data-theme");
+  root.removeAttribute("data-theme");
 
+  // sets original color palette when
+  // a swatch value is changed
   setColor("--background-color", "#edf2f4");
   setColor("--heading-color", "#1e202f");
   setColor("--text-color", "#2b2d42");
   setColor("--card-color", "#e4e4e4");
-  setColor("--primary-color", "#ef233c");
+  setColor("--primary-color", "#233bef");
   setColor("--secondary-color", "#006925");
-  setColorAndText();
 });
 
 darkBtn.addEventListener("click", () => {
-  document.body.setAttribute("data-theme", "dark");
+  root.setAttribute("data-theme", "dark");
 
   setColor("--background-color", "#1e202f");
   setColor("--heading-color", "#edf2f4");
   setColor("--text-color", "#edf2f4");
   setColor("--card-color", "#515151");
-  setColor("--primary-color", "#eb4255");
-  setColor("--secondary-color", "#00d049");
-  setColorAndText();
+  setColor("--primary-color", "#3a4bd0");
+  setColor("--secondary-color", "#01ef55");
 });
 
 // random mode
-
 const randomBtn = document.querySelector(".random");
 
 randomBtn.addEventListener("click", () => {
-  itemArray[0] = randomHex();
-  itemArray[1] = randomHex();
-  itemArray[2] = randomHex();
-  itemArray[3] = randomHex();
-  itemArray[4] = randomHex();
-  itemArray[5] = randomHex();
-
   document.body.removeAttribute("data-theme");
 
   setColor("--background-color", randomHex());

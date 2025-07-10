@@ -1,10 +1,14 @@
+/*
+*
+*/
+
 /* declare the root value */
 :root {
   --background-color: #edf2f4;
   --heading-color: #1e202f;
   --text-color: #2b2d42;
   --card-color: #e4e4e4;
-  --primary-color: #ef233c;
+  --primary-color: #233bef;
   --secondary-color: #006925;
   --white-color: #ffffff;
 
@@ -20,8 +24,8 @@
   --heading-color: #edf2f4;
   --text-color: #edf2f4;
   --card-color: #515151;
-  --primary-color: #eb4255;
-  --secondary-color: #00d049;
+  --primary-color: #3a4bd0;
+  --secondary-color: #01ef55;
   --white-color: #ffffff;
 
   --graph-img-color: rgb(112, 111, 111);
@@ -43,13 +47,12 @@ h6 {
   color: var(--heading-color);
 }
 
+/* color changer buttons */
 p,
 label,
 .hex-value {
   color: var(--text-color);
 }
-
-/* color changer buttons */
 
 /* title container styles */
 .main-cta,
